@@ -1,0 +1,26 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (Debug)",
+      "type": "shell",
+      "command": "gxcWrapper/gxcWrapper.sh xcodebuild -project AudioUnitGoogleTest.xcodeproj -configuration Debug -scheme AudioUnitGoogleTest -derivedDataPath ${workspaceFolder}/build && ln -sf ${workspaceFolder}/build/Build/Products/Debug ${workspaceFolder}/build/Latest",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Clean",
+      "type": "shell",
+      "command": "rm -rf build cdb",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    }
+  ]
+}
